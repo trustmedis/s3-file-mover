@@ -21,3 +21,5 @@
 go.work
 
 config.toml
+
+.DS_Store
