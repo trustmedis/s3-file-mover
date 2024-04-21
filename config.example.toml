@@ -1,0 +1,7 @@
+ACCESS_KEY = ""
+ACCESS_SECRET = ""
+REGION = ""
+ENDPOINT = ""
+BUCKET = ""
+WATCH_DIR = ""
+AUTO_CLEANUP = false
