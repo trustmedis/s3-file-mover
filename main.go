@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/fsnotify/fsnotify"
-	"github.com/trustmedis/s3-file-mover/lib"
+	"github.com/trustmedis/s3-files-migrator/lib"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module github.com/trustmedis/s3-file-mover
+module github.com/trustmedis/s3-files-migrator
 
 go 1.21.7
 
