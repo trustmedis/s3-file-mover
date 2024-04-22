@@ -50,7 +50,17 @@ func UploadFile(config *Config, originFilePath, targetFilePath string) error {
 		return err
 	}
 
-	log.Println("Found", originFilePath, ", uploaded to", targetFilePath)
+	log.Printf("Found file %s, uploaded to s3://%s/%s", originFilePath, config.BUCKET, targetFilePath)
+
+	// Autocleanup based on AUTO_CLEANUP value
+	if config.AUTO_CLEANUP {
+		os.Remove(originFilePath)
+	}
+
+	// Delete files on AUTO_CLEANUP
+	if config.AUTO_CLEANUP {
+		os.Remove(originFilePath)
+	}
 
 	return nil
 }
