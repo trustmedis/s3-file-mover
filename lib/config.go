@@ -42,15 +42,15 @@ func LoadConfig() *Config {
 	}
 
 	// Check S3 credentials
-	err = CheckS3Credentials(&config)
+	CheckS3Credentials(&config)
 
 	return &config
 }
 
-func CheckS3Credentials(config *Config) error {
+func CheckS3Credentials(config *Config) {
 	session, err := CreateSession(config)
 	if err != nil {
-		return err
+		log.Fatalln(err)
 	}
 
 	// Try fetching bucket information as a simple operation
@@ -64,5 +64,4 @@ func CheckS3Credentials(config *Config) error {
 	}
 
 	log.Println("S3 credentials and permissions are valid.")
-	return nil
 }
