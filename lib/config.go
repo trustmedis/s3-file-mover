@@ -12,13 +12,15 @@ import (
 )
 
 type Config struct {
-	ACCESS_KEY    string   `validate:"required"`
-	ACCESS_SECRET string   `validate:"required"`
-	REGION        string   `validate:"required"`
-	BUCKET        string   `validate:"required"`
-	ENDPOINT      string   `validate:"required"`
-	WATCH_DIR     []string `validate:"required"`
-	AUTO_CLEANUP  bool
+	ACCESS_KEY              string   `validate:"required"`
+	ACCESS_SECRET           string   `validate:"required"`
+	REGION                  string   `validate:"required"`
+	BUCKET                  string   `validate:"required"`
+	ENDPOINT                string   `validate:"required"`
+	WATCH_DIR               []string `validate:"required"`
+	AUTO_CLEANUP            bool
+	AUTOMOVE_EXISTING_FILES bool
+	APPEND_TIMESTAMP        bool
 }
 
 func LoadConfig() *Config {
