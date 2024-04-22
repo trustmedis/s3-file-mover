@@ -40,6 +40,9 @@ func UploadFile(config *Config, originFilePath, targetFilePath string) error {
 		return err
 	}
 
+	if config.APPEND_TIMESTAMP {
+		targetFilePath = fileInfo.ModTime().Format("20060102150405") + "_" + targetFilePath
+	}
 	_, err = svc.PutObject(&s3.PutObjectInput{
 		Bucket:        aws.String(config.BUCKET),
 		Key:           aws.String(targetFilePath),
