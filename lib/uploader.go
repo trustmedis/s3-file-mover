@@ -52,5 +52,10 @@ func UploadFile(config *Config, originFilePath, targetFilePath string) error {
 
 	log.Println("Found", originFilePath, ", uploaded to", targetFilePath)
 
+	// Delete files on AUTO_CLEANUP
+	if config.AUTO_CLEANUP {
+		os.Remove(originFilePath)
+	}
+
 	return nil
 }
